@@ -5,6 +5,7 @@ module.exports = class TicTacToe {
     [null, null, null],
   ]) {
     this.fields = fields;
+    this.lastTurn = this.lastTurn;
   }
 
   victory() {
@@ -60,10 +61,11 @@ tie() {
       {
         ties = "You ended the game with a tie";
       }
-    
   });
   return ties;
+
 }
+
 
 
   makeTurn(x, y, type) {
@@ -88,7 +90,13 @@ tie() {
       throw Error('spot already used');
     }
 
+    if(this.lastTurn === type){
+      throw Error('HOld the fuck up, its not ur turn nigga');
+    }
+
+
     this.fields[+x][+y] = type;
+    this.lastTurn = type;
   }
 
   getFields() {

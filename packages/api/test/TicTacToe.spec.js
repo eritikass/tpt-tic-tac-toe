@@ -108,4 +108,14 @@ describe('TicTacToe', () => {
     expect(t.tie()).toBe('You ended the game with a tie')
   })
 
+  it('HOld the fuck up, its not ur turn nigga',() =>{
+    const t = new TicTacToe();
+    t.makeTurn(0,0, 'X');
+    expect(t.victory()).toBe(null);
+    expect(() =>{
+    t.makeTurn(0,1, 'X');
+      
+    }).toThrow('HOld the fuck up, its not ur turn nigga');
+  })
+
 });
