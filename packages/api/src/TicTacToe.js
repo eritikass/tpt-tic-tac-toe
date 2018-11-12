@@ -5,7 +5,6 @@ module.exports = class TicTacToe {
     [null, null, null],
   ]) {
     this.fields = fields;
-    this.lastTurn = this.lastTurn;
   }
 
   victory() {
@@ -52,36 +51,8 @@ module.exports = class TicTacToe {
     return vic;
   }
 
-<<<<<<< HEAD
-tie() {
-  let ties = null;
-  this.fields.forEach((v, index) => {
-    if (this.fields[0][index] !==  null
-      && this.fields[1][index] !==  null
-      && this.fields[2][index] !==  null)
-      {
-        ties = "You ended the game with a tie";
-      }
-  });
-  return ties;
-
-}
-
-
-
-  makeTurn(x, y, type) {
-    if (x < 0 || x > 2 || y < 0 || y > 2) {
-      throw Error('not a valid coordinate');
-    }
-
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(x) || isNaN(y)) {
-      throw Error('bad input');
-    }
-=======
   tie() {
     let isTie = false;
->>>>>>> 082c0988e8378d167efb91a862c246292f7690d6
 
     this.fields.forEach((arr) => {
       arr.forEach((val) => {
@@ -111,17 +82,7 @@ tie() {
       default:
         break;
     }
-<<<<<<< HEAD
-
-    if(this.lastTurn === type){
-      throw Error('HOld the fuck up, its not ur turn nigga');
-    }
-
-
-=======
->>>>>>> 082c0988e8378d167efb91a862c246292f7690d6
     this.fields[+x][+y] = type;
-    this.lastTurn = type;
   }
 
   getFields() {

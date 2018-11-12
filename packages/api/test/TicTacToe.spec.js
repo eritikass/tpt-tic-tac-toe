@@ -106,28 +106,9 @@ describe('TicTacToe', () => {
     expect(t.victory()).toBe('O');
   });
 
-<<<<<<< HEAD
-  it('tie', () => {
-    const t = new TicTacToe([
-      ['X', 'X', 'O'],
-      ['O', 'O', 'X'],
-      ['X', 'X', 'O'],
-    ]);
-    expect(t.getFields()).toMatchSnapshot();
-    expect(t.tie()).toBe('You ended the game with a tie')
-  })
 
-  it('HOld the fuck up, its not ur turn nigga',() =>{
-    const t = new TicTacToe();
-    t.makeTurn(0,0, 'X');
-    expect(t.victory()).toBe(null);
-    expect(() =>{
-    t.makeTurn(0,1, 'X');
-      
-    }).toThrow('HOld the fuck up, its not ur turn nigga');
-  })
 
-=======
+
   it('isTie test', () => {
     const t = new TicTacToe([
       ['O', 'X', 'O'],
@@ -145,5 +126,5 @@ describe('TicTacToe', () => {
     ]);
     expect(t.tie()).toBe(false);
   });
->>>>>>> 082c0988e8378d167efb91a862c246292f7690d6
+
 });

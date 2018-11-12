@@ -6,51 +6,10 @@ O|O|-
 -|-|-
 `;
 
-<<<<<<< HEAD
-exports[`TicTacToe tie 1`] = `
-Array [
-  Array [
-    "X",
-    "X",
-    "O",
-  ],
-  Array [
-    "O",
-    "O",
-    "X",
-  ],
-  Array [
-    "X",
-    "X",
-    "O",
-  ],
-]
-`;
-
-exports[`TicTacToe victory 1 - side 1`] = `
-Array [
-  Array [
-    "X",
-    "X",
-    "X",
-  ],
-  Array [
-    "O",
-    "O",
-    null,
-  ],
-  Array [
-    null,
-    null,
-    null,
-  ],
-]
-=======
 exports[`TicTacToe Victory 2 - up/down 1`] = `
 X|O|-
 O|X|-
 -|-|X
->>>>>>> 082c0988e8378d167efb91a862c246292f7690d6
 `;
 
 exports[`TicTacToe Victory 3 - diagonal 1 1`] = `
