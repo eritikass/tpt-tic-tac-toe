@@ -20,6 +20,26 @@ Array [
 ]
 `;
 
+exports[`TicTacToe tie 1`] = `
+Array [
+  Array [
+    "X",
+    "X",
+    "O",
+  ],
+  Array [
+    "O",
+    "O",
+    "X",
+  ],
+  Array [
+    "X",
+    "X",
+    "O",
+  ],
+]
+`;
+
 exports[`TicTacToe victory 1 - side 1`] = `
 Array [
   Array [

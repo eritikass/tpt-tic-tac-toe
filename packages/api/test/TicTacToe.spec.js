@@ -97,4 +97,15 @@ describe('TicTacToe', () => {
     ]);
     expect(t.victory()).toBe('O');
   });
+
+  it('tie', () => {
+    const t = new TicTacToe([
+      ['X', 'X', 'O'],
+      ['O', 'O', 'X'],
+      ['X', 'X', 'O'],
+    ]);
+    expect(t.getFields()).toMatchSnapshot();
+    expect(t.tie()).toBe('You ended the game with a tie')
+  })
+
 });
