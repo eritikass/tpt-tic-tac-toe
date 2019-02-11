@@ -5,6 +5,7 @@ module.exports = class TicTacToe {
     [null, null, null],
   ]) {
     this.fields = fields;
+    this.lastTurn = null;
   }
 
   victory() {
@@ -51,29 +52,36 @@ module.exports = class TicTacToe {
     return vic;
   }
 
+  tie() {
+    return this.fields.map(val => {
+      return val.filter(v => v === null).length === 0
+    }).filter(v => !v).length === 0;
+  }
+
   makeTurn(x, y, type) {
-    if (x < 0 || x > 2 || y < 0 || y > 2) {
-      throw Error('not a valid coordinate');
+    switch (true) {
+      case (this.victory() !== null):
+        throw Error('Cant make turn when someone has won');
+      case (this.tie()):
+        throw Error('Cant make turn when tie');
+      case (x < 0 || x > 2 || y < 0 || y > 2):
+        throw Error('Not a valid coordinate');
+      // eslint-disable-next-line no-restricted-globals
+      case (isNaN(x) || isNaN(y)):
+        throw Error('Bad input');
+      case (parseInt(x, 10) !== x && parseInt(y, 10) !== y):
+        throw Error('Bad input number (int only)');
+      case (type !== 'X' && type !== 'O'):
+        throw Error('Bad type');
+      case (this.fields[+x][+y] !== null):
+        throw Error('Spot is already used');
+      case (this.lastTurn === type):
+        throw Error('Same player makes double turn');      
+      default:
+        break;
     }
-
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(x) || isNaN(y)) {
-      throw Error('bad input');
-    }
-
-    if (parseInt(x, 10) !== x && parseInt(y, 10) !== y) {
-      throw Error('bad input number (int only)');
-    }
-
-    if (type !== 'X' && type !== 'O') {
-      throw Error('bad type');
-    }
-
-    if (this.fields[+x][+y] !== null) {
-      throw Error('spot already used');
-    }
-
     this.fields[+x][+y] = type;
+    this.lastTurn = type;
   }
 
   getFields() {

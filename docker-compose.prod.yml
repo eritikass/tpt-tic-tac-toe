@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+
+  app:
+    image: node:10
+    restart: always
+    volumes:
+      - ./:/app
+    working_dir: /app/packages/api
+    env_file:
+      - .env
+    environment:
+      PORT: 3871
+    ports:
+      - 3871:3871
+    command: "node src/main.js"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.tictactoe.frontend.rule=Host:tpt2018.kassikas.com"
+      - "traefik.tictactoe.port=3871"
