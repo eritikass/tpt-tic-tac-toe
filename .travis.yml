@@ -2,13 +2,7 @@ language: node_js
 
 node_js:
 - "10"
-
-
-
 install:
   - npm run bootstrap
-
-
-
 script:
   - echo "good morning, texas"
